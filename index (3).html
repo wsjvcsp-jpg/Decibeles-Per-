@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decibeles — La música peruana, en voz alta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* HERO (solo index) */
+  .hero { background: var(--negro); display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; border-bottom: 3px solid var(--rojo); }
+  .hero-texto { padding: 4rem 3rem 4rem 2rem; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(255,255,255,0.07); }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--naranja); font-weight: 600; margin-bottom: 1rem; }
+  .hero-titulo { font-family: var(--fuente-titulo); font-size: clamp(2rem, 4vw, 3.4rem); color: white; line-height: 1.15; margin-bottom: 1.2rem; }
+  .hero-titulo em { color: var(--rojo); font-style: italic; }
+  .hero-subtitulo { color: rgba(255,255,255,0.45); font-size: 14px; line-height: 1.8; max-width: 460px; margin-bottom: 2rem; }
+  .btn-primario { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: white; text-decoration: none; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; padding: 0.8rem 1.6rem; border: 1px solid rgba(255,255,255,0.2); transition: all 0.2s; align-self: flex-start; font-family: var(--fuente-cuerpo); }
+  .btn-primario:hover { background: var(--rojo); border-color: var(--rojo); }
+  .btn-primario .arrow { transition: transform 0.2s; }
+  .btn-primario:hover .arrow { transform: translateX(4px); }
+  .hero-imagen { position: relative; overflow: hidden; background: var(--carbon); display: flex; align-items: flex-end; justify-content: center; padding: 2rem 2rem 0; }
+  .eq-wrap { width: 100%; display: flex; align-items: flex-end; justify-content: center; gap: 5px; height: 340px; }
+  .eq-bar { flex: 1; max-width: 22px; border-radius: 3px 3px 0 0; animation: eq-dance 1.2s ease-in-out infinite alternate; transform-origin: bottom; }
+  .eq-bar:nth-child(-n+5)  { background: var(--rojo); }
+  .eq-bar:nth-child(n+6):nth-child(-n+10) { background: var(--naranja); }
+  .eq-bar:nth-child(n+11):nth-child(-n+15) { background: var(--rojo); }
+  .eq-bar:nth-child(n+16) { background: var(--naranja); }
+  .eq-bar:nth-child(1)  { height: 40%;  animation-delay: 0.00s; }
+  .eq-bar:nth-child(2)  { height: 70%;  animation-delay: 0.07s; }
+  .eq-bar:nth-child(3)  { height: 55%;  animation-delay: 0.14s; }
+  .eq-bar:nth-child(4)  { height: 85%;  animation-delay: 0.21s; }
+  .eq-bar:nth-child(5)  { height: 45%;  animation-delay: 0.28s; }
+  .eq-bar:nth-child(6)  { height: 95%;  animation-delay: 0.35s; }
+  .eq-bar:nth-child(7)  { height: 60%;  animation-delay: 0.42s; }
+  .eq-bar:nth-child(8)  { height: 75%;  animation-delay: 0.49s; }
+  .eq-bar:nth-child(9)  { height: 50%;  animation-delay: 0.56s; }
+  .eq-bar:nth-child(10) { height: 90%;  animation-delay: 0.63s; }
+  .eq-bar:nth-child(11) { height: 35%;  animation-delay: 0.70s; }
+  .eq-bar:nth-child(12) { height: 80%;  animation-delay: 0.63s; }
+  .eq-bar:nth-child(13) { height: 55%;  animation-delay: 0.56s; }
+  .eq-bar:nth-child(14) { height: 100%; animation-delay: 0.49s; }
+  .eq-bar:nth-child(15) { height: 65%;  animation-delay: 0.42s; }
+  .eq-bar:nth-child(16) { height: 88%;  animation-delay: 0.35s; }
+  .eq-bar:nth-child(17) { height: 42%;  animation-delay: 0.28s; }
+  .eq-bar:nth-child(18) { height: 72%;  animation-delay: 0.21s; }
+  .eq-bar:nth-child(19) { height: 58%;  animation-delay: 0.14s; }
+  .eq-bar:nth-child(20) { height: 30%;  animation-delay: 0.07s; }
+  @keyframes eq-dance { 0% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(0.15); opacity: 0.5; } }
+  .eq-label { position: absolute; top: 2rem; right: 2rem; font-family: var(--fuente-display); font-size: 0.85rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.2); text-transform: uppercase; }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .hero-imagen { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap"><div class="ticker-inner">
+  <span>✦ Rumbo a los Latin Grammy 2026</span>
+  <span>✦ Wayku — Selva Selva</span>
+  <span>✦ Carlos García — Diazepunk</span>
+  <span>✦ Mundano Fest debuta en Lima</span>
+  <span>✦ Lorena Blume — Dinamita</span>
+  <span>✦ Rumbo a los Latin Grammy 2026</span>
+  <span>✦ Wayku — Selva Selva</span>
+  <span>✦ Carlos García — Diazepunk</span>
+  <span>✦ Mundano Fest debuta en Lima</span>
+  <span>✦ Lorena Blume — Dinamita</span>
+</div></div>
+
+<header>
+  <div class="header-wave-bg" aria-hidden="true">
+    <span style="height:18px"></span><span style="height:32px"></span><span style="height:45px"></span><span style="height:28px"></span><span style="height:55px"></span><span style="height:20px"></span><span style="height:40px"></span><span style="height:14px"></span><span style="height:50px"></span><span style="height:36px"></span><span style="height:22px"></span><span style="height:60px"></span><span style="height:30px"></span><span style="height:44px"></span><span style="height:16px"></span><span style="height:52px"></span><span style="height:26px"></span><span style="height:38px"></span><span style="height:48px"></span><span style="height:12px"></span><span style="height:56px"></span><span style="height:34px"></span><span style="height:20px"></span><span style="height:42px"></span><span style="height:18px"></span><span style="height:32px"></span><span style="height:45px"></span><span style="height:28px"></span><span style="height:55px"></span><span style="height:20px"></span><span style="height:40px"></span><span style="height:14px"></span><span style="height:50px"></span><span style="height:36px"></span><span style="height:22px"></span><span style="height:60px"></span><span style="height:30px"></span><span style="height:44px"></span><span style="height:16px"></span><span style="height:52px"></span><span style="height:26px"></span><span style="height:38px"></span><span style="height:48px"></span><span style="height:12px"></span><span style="height:56px"></span><span style="height:34px"></span><span style="height:20px"></span><span style="height:42px"></span>
+  </div>
+  <div class="header-inner">
+    <div class="header-supertop">
+      <span class="header-fecha">Lima, Perú · Periodismo musical independiente</span>
+      <span class="header-tagline-top">Est. 2025</span>
+    </div>
+    <div class="header-centro">
+      <div class="header-wave-left" aria-hidden="true">
+        <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+      </div>
+      <div class="logo-wrap">
+        <a href="index.html" class="logo">Decibeles</a>
+        <span class="logo-sub">La música peruana, en voz alta</span>
+      </div>
+      <div class="header-wave-right" aria-hidden="true">
+        <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+      </div>
+    </div>
+    <div class="header-nav-wrap">
+      <nav>
+        <a href="index.html" class="activo">Inicio</a>
+        <a href="entrevistas.html">Entrevistas</a>
+        <a href="analisis.html">Análisis</a>
+        <a href="resenas.html">Reseñas</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-texto">
+    <p class="hero-eyebrow">Periodismo musical peruano</p>
+    <h1 class="hero-titulo">La música peruana,<br><em>en voz alta.</em></h1>
+    <p class="hero-subtitulo">Entrevistas, análisis, letras y escenas. Desde los artistas emergentes hasta los que ya son leyenda. Porque la música peruana tiene mucho que decir.</p>
+    <a href="entrevistas.html" class="btn-primario">Explorar contenido <span class="arrow">→</span></a>
+  </div>
+  <div class="hero-imagen">
+    <span class="eq-label">Audio en vivo</span>
+    <div class="eq-wrap" aria-hidden="true">
+      <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="contenedor">
+    <section class="seccion">
+      <span class="seccion-titulo">Últimas historias</span>
+      <div class="grid-articulos">
+        <div class="articulo-principal">
+          <div class="placeholder-img">[ imagen ]</div>
+          <p class="articulo-categoria">Noticias · Industria</p>
+          <h2 class="articulo-titulo"><a href="noticia-latin-grammy.html">Artistas peruanos entran en la carrera hacia los Latin Grammy 2026</a></h2>
+          <p class="articulo-extracto">Eva Ayllón, Susana Baca, Tony Succar, Amy Gutiérrez, Dayan Flor y Milena Warthon figuran en la etapa de consideración de la Academia Latina de la Grabación.</p>
+          <p class="articulo-meta"><strong>Por Decibeles</strong> · Septiembre 2026</p>
+        </div>
+        <div>
+          <div class="articulo-secundario">
+            <div class="placeholder-img pequeno">[ imagen ]</div>
+            <p class="articulo-categoria">Reseña · Álbum debut</p>
+            <h2 class="articulo-titulo pequeno"><a href="resena-wayku-selva.html">Wayku — <em>Selva Selva</em> (2025)</a></h2>
+            <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+          </div>
+          <div class="articulo-secundario">
+            
+            <p class="articulo-categoria">Noticias · Escena</p>
+            <h2 class="articulo-titulo pequeno"><a href="noticia-mundano-fest.html">Mundano Fest debuta en Lima como nuevo showcase de rock independiente</a></h2>
+            <p class="articulo-meta"><strong>Por Decibeles</strong> · 4 de septiembre, 2026</p>
+          </div>
+          <div class="articulo-secundario">
+            
+            <p class="articulo-categoria">Entrevista · Diazepunk</p>
+            <h2 class="articulo-titulo pequeno"><a href="entrevista-carlos-garcia.html">Carlos García: “Quien no tiene calle con su proyecto no va a levantar”</a></h2>
+            <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+          </div>
+        </div>
+        <div>
+          <div class="articulo-secundario">
+            <div class="placeholder-img pequeno">[ imagen ]</div>
+            <p class="articulo-categoria">Reseña · Álbum</p>
+            <h2 class="articulo-titulo pequeno"><a href="resena-lorena-blume.html">Lorena Blume — <em>Dinamita</em> (2025)</a></h2>
+            <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+          </div>
+          <div class="articulo-secundario">
+            
+            <p class="articulo-categoria">Análisis · Industria</p>
+            <h2 class="articulo-titulo pequeno"><a href="analisis-cassette-algoritmo.html">Del cassette al algoritmo: cómo cambió (o no) la dificultad de hacerse escuchar en el Perú</a></h2>
+            <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+          </div>
+          <div class="articulo-secundario">
+            
+            <p class="articulo-categoria">Noticias · Política cultural</p>
+            <h2 class="articulo-titulo pequeno"><a href="noticia-ley-agua.html">Congreso propone que los conciertos den agua gratis al público</a></h2>
+            <p class="articulo-meta"><strong>Por Decibeles</strong> · 2 de septiembre, 2026</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <span class="seccion-titulo">Explorar por sección</span>
+      <div class="categorias-grid">
+        <a href="entrevistas.html" class="categoria-item">
+          <div class="categoria-num">01</div>
+          <div class="categoria-nombre">Entrevistas</div>
+          <div class="categoria-desc">Conversaciones largas con artistas peruanos, en sus propias palabras.</div>
+        </a>
+        <a href="analisis.html" class="categoria-item">
+          <div class="categoria-num">02</div>
+          <div class="categoria-nombre">Análisis</div>
+          <div class="categoria-desc">Letras, instrumentación, contexto histórico y lo que hay detrás del sonido.</div>
+        </a>
+        <a href="resenas.html" class="categoria-item">
+          <div class="categoria-num">03</div>
+          <div class="categoria-nombre">Reseñas</div>
+          <div class="categoria-desc">Discos, EPs y singles evaluados con honestidad y criterio.</div>
+        </a>
+        <a href="noticias.html" class="categoria-item">
+          <div class="categoria-num">04</div>
+          <div class="categoria-nombre">Noticias</div>
+          <div class="categoria-desc">Eventos, industria y política cultural de la escena peruana.</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <span class="seccion-titulo">Entrevistas recientes</span>
+      <div class="entrevistas-lista">
+        <div class="entrevista-item">
+          <div class="entrevista-num">01</div>
+          <div class="entrevista-contenido">
+            <h3 class="entrevista-nombre"><a href="entrevista-carlos-garcia.html">Carlos García — Diazepunk</a></h3>
+            <p class="entrevista-desc">El integrante de Diazepunk cuenta cómo el punk limeño de inicios de los 2000 construyó comunidad con correos y cassettes imperfectos, y por qué el algoritmo de hoy castiga justo lo que esa escena celebraba.</p>
+          </div>
+        </div>
+        <div class="entrevista-item">
+          <div class="entrevista-num">02</div>
+          <div class="entrevista-contenido">
+            <h3 class="entrevista-nombre"><a href="entrevista-renzo-lancho.html">Renzo Lancho — Dale Vuelta</a></h3>
+            <p class="entrevista-desc">Treinta años después de regalar cassettes para hacerse escuchar, el líder de Dale Vuelta explica por qué el streaming trasladó la dificultad de lo físico a lo virtual sin resolverla.</p>
+          </div>
+        </div>
+        <div class="entrevista-item">
+          <div class="entrevista-num">03</div>
+          <div class="entrevista-contenido">
+            <h3 class="entrevista-nombre"><a href="entrevista-arturo-prieto.html">Arturo Prieto — Río</a></h3>
+            <p class="entrevista-desc">Desde una azotea en Pueblo Libre en 1979 hasta el rock peruano de hoy: el fundador de Río compara buscar artistas antes y ahora con una ferretería finita frente a un corredor sin fin.</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </div>
+
+  <section class="manifiesto">
+    <div class="manifiesto-inner">
+      <p class="manifiesto-cita">"La música peruana no necesita que la descubra el mundo. Necesita que nosotros la escuchemos primero."</p>
+      <p class="manifiesto-firma">— Decibeles · Lima, Perú</p>
+    </div>
+  </section>
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <p class="newsletter-eyebrow">Mantente al día</p>
+      <h2 class="newsletter-titulo">La escena musical peruana, cada semana</h2>
+      <p class="newsletter-subtitulo">Entrevistas nuevas, análisis y lo que está pasando en la música peruana. Sin spam.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="tu@correo.com">
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="footer-logo">Decibeles</a>
+      <p class="footer-desc">Periodismo musical independiente sobre la escena peruana. Desde Lima hacia el mundo.</p>
+    </div>
+    <div>
+      <p class="footer-col-titulo">Secciones</p>
+      <ul class="footer-links">
+        <li><a href="entrevistas.html">Entrevistas</a></li>
+        <li><a href="analisis.html">Análisis</a></li>
+        <li><a href="resenas.html">Reseñas</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-titulo">Nosotros</p>
+      <ul class="footer-links">
+        <li><a href="nosotros.html">Misión</a></li>
+        <li><a href="nosotros.html#equipo">Equipo</a></li>
+        <li><a href="nosotros.html#colabora">Colabora</a></li>
+        <li><a href="nosotros.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-titulo">Seguir</p>
+      <ul class="footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">Spotify</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Decibeles · Lima, Perú</span>
+    <span>Todos los derechos reservados</span>
+  </div>
+</footer>
+</body>
+</html>
