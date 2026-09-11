@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis — Decibeles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .tag-ensayo {
+    display: inline-block;
+    background: var(--negro);
+    color: var(--naranja);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 3px 8px;
+    margin-bottom: 0.6rem;
+  }
+  .ensayo-strip {
+    border-left: 3px solid var(--naranja);
+    padding-left: 1.2rem;
+  }
+  .ensayo-banner {
+    background: var(--negro);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .ensayo-banner-label {
+    font-family: var(--fuente-display);
+    font-size: 1.1rem;
+    color: var(--naranja);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+  .ensayo-banner p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+  .articulo-cuerpo {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.9;
+    max-width: 760px;
+  }
+  .articulo-cuerpo p { margin-bottom: 1.2rem; }
+  .referencias {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gris-claro);
+  }
+  .referencias-titulo {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gris);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+  .referencias p {
+    font-size: 12px;
+    color: var(--gris);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+  .referencias a { color: var(--rojo); }
+  .articulo-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--gris-claro); }
+  .articulo-header h1 { font-family: var(--fuente-titulo); font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; margin-bottom: 0.8rem; }
+  .separador-seccion {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0 2rem;
+  }
+  .separador-seccion::before, .separador-seccion::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gris-claro);
+  }
+  .separador-label {
+    font-family: var(--fuente-display);
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--naranja);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap"><div class="ticker-inner">
+  <span>✦ Del cassette al algoritmo: cómo cambió la dificultad de hacerse escuchar en el Perú</span>
+  <span>✦ El negocio de los festivales: cerveza, carteles y bandas tributo</span>
+  <span>✦ Autogestión vs. disquera: dos generaciones, la misma decisión</span>
+  <span>✦ Cuando la calle formaba al artista: comunidad física vs. comunidad digital</span>
+  <span>✦ Del cassette al algoritmo: cómo cambió la dificultad de hacerse escuchar en el Perú</span>
+  <span>✦ El negocio de los festivales: cerveza, carteles y bandas tributo</span>
+</div></div>
+
+<header>
+  <div class="header-wave-bg" aria-hidden="true">
+    <span style="height:18px"></span><span style="height:32px"></span><span style="height:45px"></span><span style="height:28px"></span><span style="height:55px"></span><span style="height:20px"></span><span style="height:40px"></span><span style="height:14px"></span><span style="height:50px"></span><span style="height:36px"></span><span style="height:22px"></span><span style="height:60px"></span><span style="height:30px"></span><span style="height:44px"></span><span style="height:16px"></span><span style="height:52px"></span><span style="height:26px"></span><span style="height:38px"></span><span style="height:48px"></span><span style="height:12px"></span><span style="height:56px"></span><span style="height:34px"></span><span style="height:20px"></span><span style="height:42px"></span><span style="height:18px"></span><span style="height:32px"></span><span style="height:45px"></span><span style="height:28px"></span><span style="height:55px"></span><span style="height:20px"></span><span style="height:40px"></span><span style="height:14px"></span><span style="height:50px"></span><span style="height:36px"></span><span style="height:22px"></span><span style="height:60px"></span><span style="height:30px"></span><span style="height:44px"></span><span style="height:16px"></span><span style="height:52px"></span><span style="height:26px"></span><span style="height:38px"></span><span style="height:48px"></span><span style="height:12px"></span><span style="height:56px"></span><span style="height:34px"></span><span style="height:20px"></span><span style="height:42px"></span>
+  </div>
+  <div class="header-inner">
+    <div class="header-supertop">
+      <span class="header-fecha">Lima, Perú · Periodismo musical independiente</span>
+      <span class="header-tagline-top">Est. 2025</span>
+    </div>
+    <div class="header-centro">
+      <div class="header-wave-left" aria-hidden="true">
+        <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+      </div>
+      <div class="logo-wrap">
+        <a href="index.html" class="logo">Decibeles</a>
+        <span class="logo-sub">La música peruana, en voz alta</span>
+      </div>
+      <div class="header-wave-right" aria-hidden="true">
+        <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+      </div>
+    </div>
+    <div class="header-nav-wrap">
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="entrevistas.html">Entrevistas</a>
+        <a href="analisis.html" class="activo">Análisis</a>
+        <a href="resenas.html">Reseñas</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-eyebrow">Profundidad crítica</p>
+    <h1 class="page-hero-titulo">Aná<span>lisis</span></h1>
+    <p class="page-hero-desc">La música peruana vista desde adentro — industria, escena, historia y las tensiones que la definen. Más los ensayos donde la reflexión va más lejos que la noticia.</p>
+  </div>
+</div>
+
+<main>
+  <div class="contenedor">
+
+    <!-- ======= ANÁLISIS ======= -->
+    <section class="seccion">
+      <span class="seccion-titulo">Análisis</span>
+
+      <!-- Análisis 1 -->
+      <div style="margin-bottom:3rem;">
+        <div class="articulo-header">
+          <p class="articulo-categoria">Análisis · Industria</p>
+          <h1>Del cassette al algoritmo: cómo cambió (o no) la dificultad de hacerse escuchar en el Perú</h1>
+          <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+        </div>
+        <div class="articulo-cuerpo">
+          <p>Hay una pregunta muy importante que casi cualquier músico peruano podría hacerse razonablemente: ¿era más fácil hacerse escuchar antes o ahora? La respuesta, una que ha variado a través de cada década de rock, la hemos construido en base a nuestra conversación con tres artistas de tres épocas completamente distintas. Y lo que concluimos fue que la dificultad no ha desaparecido con la llegada de la tecnología — está únicamente cambió de forma.</p>
+          <p>Arturo Prieto, de la banda Río, una de las bandas más importantes del rock peruano, vivió en una generación donde ser músico profesional difícilmente era una elección — era como hacer un trámite. En ese Perú de los setenta y ochentas existían apenas unas cinco o seis disqueras, y sin un contrato firmado con alguna de ellas, era imposible grabar alguna canción. Prieto lo compara con algo casi imposible, una suerte de tinka. Río se demoró más de dos años tocando la misma puerta, pero al final era un filtro claro: si conseguías el contrato, eras artista. Si no, no.</p>
+          <p>Carlos García llegó a inicios de los 2000, en lo que él mismo llama un momento "bisagra": el internet existía, pero aún no era un espacio comercial. Bandas establecidas como Líbido o Mar de Copas peleaban por espacio en radio y televisión, mientras que la escena punk donde participó García construyó comunidades mediante correos y papeles pegados en puertas de conciertos. El internet era un lugar muy vacío — y en la parte buena, no había competencia. Hoy, como él mismo dice, es lo contrario.</p>
+          <p>Renzo Lancho, fundador de Dale Vuelta desde los 90s, pone la dificultad ya en papel: subir una canción a una plataforma no te hace más fácil llegar a la gente. "Porque, básicamente, si no pagas, no llegas." El filtro económico de la disquera fue reemplazado por el filtro de la publicidad digital — solo que ahora es invisible y la competencia es decenas de veces más amplia.</p>
+          <p>Todos estos testimonios nos dejan con una imagen clara: la dificultad no desaparece, se traslada. Primero fue física — conseguir un contrato, una prensa de discos. Ahora es virtual — pagas por alcance y compites contra un volumen de producción que ningún oyente podrá satisfacer. Prieto lo resume con una metáfora brillante: antes, escuchar música era como ir a una ferretería con una sola fila finita de tornillos. Hoy es un corredor sin fin que crece cada día, del cual solo puedes ver los primeros metros, con decenas de tornillos siendo exactamente iguales.</p>
+        </div>
+      </div>
+
+      <!-- Análisis 2 -->
+      <div style="margin-bottom:3rem; padding-top:2rem; border-top:1px solid var(--gris-claro);">
+        <div class="articulo-header">
+          <p class="articulo-categoria">Análisis · Industria</p>
+          <h1>El negocio de los festivales: cerveza, carteles y bandas tributo</h1>
+          <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+        </div>
+        <div class="articulo-cuerpo">
+          <p>En los últimos años, el Perú ha vivido un auge notorio de festivales y conciertos. Casos como el Festival San Juan de Ucayali, que atrajo a más de 20 mil visitantes, o el regreso de Vivo x el Rock como uno de los festivales más grandes de rock de la región, confirman que el negocio de los festivales está creciendo con fuerza. Sin embargo, este crecimiento no debe ser el único indicador usado. La pregunta que vale la pena hacerse es si este crecimiento se traduce en mejores oportunidades para nuevas bandas, o si simplemente es un negocio cada vez más grande que no cambia nada.</p>
+          <p>Jose Lindley, productor musical y especialista en gestión de derechos musicales, lo explica en una entrevista con el Diario Gestión: las plataformas de streaming visibilizan, pero no garantizan ingresos reales. El dinero real radica en los shows en vivo, la sincronización con marcas o la venta directa. Esto convierte el circuito de conciertos y festivales en la pieza central del soporte de un músico independiente.</p>
+          <p>Revisar el line-up de festivales próximos demuestra un patrón de comportamiento donde predominan bandas ya establecidas hace más de una década y algunos títulos internacionales. Renzo Lancho, de la banda Dale Vuelta, describe esta dinámica y efectúa una crítica importante: que buena parte de los espacios reducidos que quedan disponibles — que deberían ser para bandas nuevas — son ocupados por bandas tributo que no aportan nada nuevo a la escena.</p>
+          <p>Afortunadamente, aún existen plataformas que intentan cerrar esta brecha. Aplicativos como Pro Indie Music buscan democratizar el acceso de los artistas independientes peruanos a oportunidades reales dentro de la industria. Es un intento de construir el marco institucional que necesita la escena peruana — una iniciativa privada donde todavía falta apoyo público.</p>
+          <p>El resultado es una paradoja crítica: los festivales musicales, que cada vez se hacen más grandes y más lucrativos, no representan que la escena musical peruana realmente haya crecido o se haya profesionalizado. Simplemente representa un crecimiento en el negocio. Y mientras esa brecha exista, el tamaño de un festival no reflejará un desarrollo real en la escena musical.</p>
+        </div>
+      </div>
+
+      <!-- Análisis 3 -->
+      <div style="margin-bottom:3rem; padding-top:2rem; border-top:1px solid var(--gris-claro);">
+        <div class="articulo-header">
+          <p class="articulo-categoria">Análisis · Generaciones</p>
+          <h1>Autogestión vs. disquera: dos generaciones, la misma decisión</h1>
+          <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+        </div>
+        <div class="articulo-cuerpo">
+          <p>Entre Arturo Prieto, de Río, Carlos García, de Diazepunk, y Renzo Lancho, de Dale Vuelta — tres exponentes de diferentes generaciones en la música peruana — son testigos de un cambio radical en las herramientas disponibles para hacer música. Sin embargo, incluso con medios distintos, los tres, en el fondo, tomaron una sola decisión.</p>
+          <p>Para Prieto, en su época, no existía alternativa al modelo de la disquera. Grabar un disco requería acceso a maquinaria y estudios profesionales que eran inaccesibles sin un contrato. Solo las disqueras de Virrey y Emsa contaban con las consolas de grabación necesarias. Para conseguir ese contrato, Río tuvo que esperar más de dos años — pero una vez firmado, la disquera se encargaba de todo: marketing, distribución, difusión, presencia en radio. El filtro era claro y, para quienes lo superaban, funcionaba.</p>
+          <p>García y Lancho llegaron en un momento distinto, a inicios de los 2000, cuando la escena poco a poco se independizaba. García usó listas de correo y foros para promoverse por sí mismo. Lancho fue aún más artesanal: grababa cassettes por su cuenta y los regalaba, sin depender de ningún sello.</p>
+          <p>Al eliminar la necesidad de la disquera se gana velocidad y control — ya no es necesario esperar un contrato, puedes controlar cómo te presentas y a qué público llegas. Sin embargo, la disquera, incluso con sus defectos, cumplía una función de visibilidad garantizada que nadie puede reemplazar. Antes, el número limitado de artistas con contrato aseguraba un mínimo de atención pública. Hoy, sin ese filtro, el volumen aumenta exponencialmente — y ese exceso lo hace incluso más difícil que antes.</p>
+          <p>Pero este cambio entre modelos se basa en una misma convicción: no subordinar la música a lo que el sistema quiere, sino hacer tu música porque crees que deberías hacerlo. Prieto fue reduciendo sus covers progresivamente, aunque el público le pedía lo contrario. Lancho nunca escribió pensando en generar una reacción forzada. Al final, es esta autenticidad lo que naturalmente atrae a tu público.</p>
+        </div>
+      </div>
+
+      <!-- Análisis 4 -->
+      <div style="margin-bottom:2rem; padding-top:2rem; border-top:1px solid var(--gris-claro);">
+        <div class="articulo-header">
+          <p class="articulo-categoria">Análisis · Comunidad</p>
+          <h1>Cuando la calle formaba al artista: comunidad física vs. comunidad digital</h1>
+          <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+        </div>
+        <div class="articulo-cuerpo">
+          <p>Se tiene muchas veces el entendimiento que en nuestros tiempos actuales, un proyecto musical debe y necesita empezar sobre lo digital. Sin embargo, propongo un camino un poco contradictorio: partir de la calle a lo digital. Porque quien no tiene calle en su proyecto no va a levantar — y sé que esto contradice buena parte del sentido común de cómo lanzar una carrera musical.</p>
+          <p>En Lima, esto fue especialmente real. La escena del rock subterráneo y la escena alternativa que empezó alrededor de los 2000 se articuló durante décadas en lugares físicos y concretos, donde confluyen el punk, el new wave, el hardcore e incluso el heavy metal (Bazo, 2017). Estas escenas funcionaron como el pilar sobre el que se construyó la escena independiente.</p>
+          <p>Si bien iniciar por lo digital no es malo en lo absoluto, requiere otra manera de proceder muy distinta. La generación de una comunidad unida es mucho más difícil, sobre todo considerando la oferta tan saturada de diferentes artistas disponibles gracias al internet. Según Kreuzer et al (2025), el público se siente más conectado en un concierto presencial que en una transmisión en directo. La gente no se compromete con una banda porque un algoritmo se lo ponga en su playlist — se genera en vivo, y después, orgánicamente, esa gente busca la música en plataformas.</p>
+          <p>Una comunidad digital puede formarse y disolverse con la misma velocidad: seguir una cuenta o escuchar una canción una vez no exige ningún compromiso real. MIDiA Research (2026) documenta algo similar: cuando el algoritmo abruma con recomendaciones constantes, generar comunidad real con otros fans se vuelve difícil.</p>
+          <p>En el caso del Perú, esta fragilidad es aún mayor. La mayoría de los músicos independientes peruanos dependen de sus presentaciones en vivo para existir, y casi ninguno cuenta con el apoyo de un marco institucional. El riesgo de generar comunidad física yace en la falta de espacios: no hay más de cinco locales disponibles en Lima para música independiente, y cada vez menos dueños disponen de sus locales para esto.</p>
+          <p>La conclusión más razonable no es que lo digital deba deshacerse a favor de lo físico, sino que elegir en cuál participar primero tiene mayor importancia de lo que uno asume.</p>
+        </div>
+        <div class="referencias">
+          <p class="referencias-titulo">Referencias</p>
+          <p>Bazo. (2017). Citado en [Tesis, Facultad de Artes Escénicas]. Pontificia Universidad Católica del Perú.</p>
+          <p>Kruse, H. (2010). Local identity and independent music scenes, online and off. <em>Popular Music and Society, 33</em>(5), 625–639.</p>
+          <p>Kreuzer, M. et al. (2025). Western classical music concerts are more immersive when experienced live. <em>Musicae Scientiae.</em></p>
+          <p>MIDiA Research. (2026). Music discovery is not dead, just evolving.</p>
+          <p>Oldenburg, R. (1989). <em>The great good place.</em> Paragon House.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= ENSAYOS ======= -->
+    <section class="seccion">
+      <div class="separador-seccion"><span class="separador-label">✦ Ensayos</span></div>
+      <div class="ensayo-banner">
+        <span class="ensayo-banner-label">Ensayo</span>
+        <p>Los ensayos de Decibeles van más allá del análisis periodístico. Son reflexiones personales sobre música, identidad y cultura — escritas en primera persona, con argumento propio.</p>
+      </div>
+
+      <!-- Ensayo 1 -->
+      <div class="ensayo-strip" style="margin-bottom:3rem;">
+        <div class="articulo-header">
+          <span class="tag-ensayo">Ensayo</span>
+          <p class="articulo-categoria">Identidad · Cultura</p>
+          <h1>"El refugio de las almas ulceradas": música, identidad y comunidad en el Perú</h1>
+          <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+        </div>
+        <div class="articulo-cuerpo">
+          <p>Una de las cosas que nos caracteriza como humanos es nuestra habilidad para sentir emociones muy profundas y de alta complejidad, y nuestra manera de interpretar estas emociones y de transmitirlas es lo que nos hace únicos. Dentro de esta complejidad, de la subjetividad del hombre, surge el arte como una manera de transmitir lo más complejo del ser. Desde siempre he sentido que el arte es la mayor expresión emocional de la historia.</p>
+          <p>El poder de una canción para mover masas y unirlas en el canto de un verso es algo muy difícil de explicar y de una intensidad inmensurable. El filósofo Emil Cioran (1952) nos deja con una frase hermosa: "La música es el refugio de las almas ulceradas por la dicha" — frase que da un vistazo a cómo la música es uno de los caminos más efectivos para la expresión emocional intensa. Según la Universidad Internacional de Andalucía (2025), la música, además de ser parte de la expresión de una comunidad, ayuda a definirla, pues refleja cómo una sociedad se ve, se valora y se interpreta.</p>
+          <p>Moviéndonos al Perú, este país, pese a su inmensa riqueza cultural, enfrenta una paradoja: muchas de sus expresiones culturales, especialmente las de géneros contemporáneos y urbanos, permanecen invisibilizadas dentro y fuera del país. Esto no se trata estrictamente de una falta de talento — tal como señala la Universidad San Ignacio de Loyola, la industria musical peruana se encuentra en un estado prematuro, donde la falta de formalidad y profesionalización han servido como cuello de botella frente al inmenso talento peruano.</p>
+          <p>Para muchas nuevas generaciones en el Perú, componer, cantar o tocar no representa únicamente un anhelo de éxito comercial, sino un refugio donde se procesa y se expresa todo lo que una ciudad y sociedad tiene que decir. Sin apoyo de instituciones privadas y públicas, el panorama de hoy es informal, aislado, pequeño e intermitente.</p>
+          <p>Para superar esta paradoja resulta indispensable reconciliar el valor emotivo de la música con la necesidad de un ecosistema profesional. Solo cuando la sociedad proporcione las condiciones para que todas sus voces sean escuchadas de manera justa, la música peruana podrá desplegar plenamente su poder para consolidar la comunidad y proyectar su riqueza al resto del mundo.</p>
+        </div>
+        <div class="referencias">
+          <p class="referencias-titulo">Referencias</p>
+          <p>Cioran, E. (1952). <em>Silogismos de la Amargura.</em></p>
+          <p>Lara, E. (2025). El poder transformador de la música en niños y jóvenes. <em>AULA Revista de Humanidades y Ciencias Sociales, 72</em>(1), 24–28.</p>
+          <p>Universidad de San Ignacio de Loyola. (s.f.). Vocación Sin Límites: el reto de la industria musical. USIL.</p>
+          <p>Universidad Internacional de Andalucía. (2025). La importancia de la música en la cultura y desarrollo local.</p>
+          <p>Orihuela, E. y Rojas, L. (2024). Análisis del impacto del modelo de autogestión en el desarrollo de la carrera musical de cantantes independientes peruanos. Tesis de licenciatura, PUCP.</p>
+        </div>
+      </div>
+
+      <!-- Ensayo 2 -->
+      <div class="ensayo-strip">
+        <div class="articulo-header">
+          <span class="tag-ensayo">Ensayo</span>
+          <p class="articulo-categoria">Identidad · Globalización</p>
+          <h1>El arte como resistencia: música e identidad frente a la uniformización cultural global</h1>
+          <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+        </div>
+        <div class="articulo-cuerpo">
+          <p>Vivimos en una época donde, por primera vez en la historia, es posible que una persona en Lima, otra en Tokio y otra en Nueva York escuchen la misma canción al mismo tiempo, recomendada por el mismo algoritmo. Este escenario no es gratis: tiene un costo cultural e identitario que pagar. Tal como señalan Salazar et al (2025), el proceso de globalización tiende a la homogeneización, absorbiendo incluso lo que nace como resistencia y convirtiéndolo eventualmente en una variación más del producto globalizado.</p>
+          <p>No busco que se rechace la tecnología ni la globalización — eso sería absurdo. Busco que se entienda que la uniformización no es un fenómeno neutral: tiene ganadores y perdedores. Los géneros que ya contaban con producción, distribución e inversión — como el pop anglosajón o el reggaeton consolidado — tuvieron la ventaja estructural para convertirse en el estándar global. Esto deja a expresiones culturales más pequeñas en desventaja total, solo porque no tienen el mismo aparato detrás para amplificarlas.</p>
+          <p>En ese punto, la música local adquiere un carácter especial: se convierte en una especie de acto de resistencia cultural, prácticamente de casualidad. Cada canción escrita en un contexto específico — con referencias, idiosincrasia y temáticas del país — funciona como un contrapeso frente a una tendencia que exige cierto formato para tener éxito. No porque se busque explícitamente la "resistencia", sino porque la misma existencia ya constituye una forma de afirmación identitaria.</p>
+          <p>Sin embargo, sería ingenuo decir que esta "resistencia" es suficiente por sí sola. La identidad cultural no sobrevive únicamente por la voluntad de sus autores — la otra parte necesaria son los consumidores, que la difunden y la validan. Si la audiencia termina prefiriendo lo que el algoritmo global ofrece, la expresión cultural propia pierde sentido. Aquí el problema toma otra dimensión: escuchar activamente lo propio, en un mundo donde lo fácil es dejarse llevar por lo que la plataforma sugiere, ya es aportar a impulsar tu escena musical local.</p>
+          <p>Tal vez la pregunta más importante no sea si la música peruana podrá resistir a la uniformización global — estoy seguro de que sí puede. Tal vez la pregunta habita en si existe suficiente comunidad y voluntad colectiva para que la cultura propia no dependa solo de unos pocos. Al final, la uniformización no se combate apagando el algoritmo, sino recordando que hay mucho que vale la pena escuchar más allá de lo que este decide mostrarnos.</p>
+        </div>
+        <div class="referencias">
+          <p class="referencias-titulo">Referencias</p>
+          <p>Salazar, J., Villalta, D., Tacuri, M., Ramos, E. y Maldonado, P. (2025). La globalización y sus desafíos para las culturas locales. <em>Polo del Conocimiento, 10</em>(11), 2873–2884.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <p class="newsletter-eyebrow">Mantente al día</p>
+      <h2 class="newsletter-titulo">La escena musical peruana, cada semana</h2>
+      <p class="newsletter-subtitulo">Nuevos análisis y ensayos directo a tu correo. Sin spam.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="tu@correo.com">
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="footer-logo">Decibeles</a>
+      <p class="footer-desc">Periodismo musical independiente sobre la escena peruana. Desde Lima hacia el mundo.</p>
+    </div>
+    <div>
+      <p class="footer-col-titulo">Secciones</p>
+      <ul class="footer-links">
+        <li><a href="entrevistas.html">Entrevistas</a></li>
+        <li><a href="analisis.html">Análisis</a></li>
+        <li><a href="resenas.html">Reseñas</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-titulo">Nosotros</p>
+      <ul class="footer-links">
+        <li><a href="nosotros.html">Misión</a></li>
+        <li><a href="nosotros.html#equipo">Equipo</a></li>
+        <li><a href="nosotros.html#colabora">Colabora</a></li>
+        <li><a href="nosotros.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-titulo">Seguir</p>
+      <ul class="footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">Spotify</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Decibeles · Lima, Perú</span>
+    <span>Todos los derechos reservados</span>
+  </div>
+</footer>
+</body>
+</html>

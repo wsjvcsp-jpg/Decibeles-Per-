@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reseñas — Decibeles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .rating { display: flex; gap: 5px; margin-bottom: 0.8rem; align-items: center; }
+  .rating-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gris-claro); }
+  .rating-dot.on { background: var(--rojo); }
+  .resena-tipo { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gris); margin-bottom: 0.3rem; }
+  .articulo-cuerpo { font-size: 15px; color: #333; line-height: 1.9; max-width: 760px; }
+  .articulo-cuerpo p { margin-bottom: 1.2rem; }
+  .articulo-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--gris-claro); }
+  .articulo-header h1 { font-family: var(--fuente-titulo); font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.2; margin-bottom: 0.8rem; }
+  .resena-bloque { padding-bottom: 3rem; margin-bottom: 3rem; border-bottom: 1px solid var(--gris-claro); }
+  .resena-bloque:last-child { border-bottom: none; }
+  .resena-meta-box {
+    background: var(--negro);
+    color: white;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .resena-meta-item { font-size: 11px; letter-spacing: 0.08em; }
+  .resena-meta-item strong { display: block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 2px; }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap"><div class="ticker-inner">
+  <span>✦ Tomar Control — Frente al miedo (2025)</span>
+  <span>✦ Wayku — Selva Selva (2025)</span>
+  <span>✦ Lorena Blume — Dinamita (2025)</span>
+  <span>✦ Tomar Control — Frente al miedo (2025)</span>
+  <span>✦ Wayku — Selva Selva (2025)</span>
+  <span>✦ Lorena Blume — Dinamita (2025)</span>
+</div></div>
+
+<header>
+  <div class="header-wave-bg" aria-hidden="true">
+    <span style="height:18px"></span><span style="height:32px"></span><span style="height:45px"></span><span style="height:28px"></span><span style="height:55px"></span><span style="height:20px"></span><span style="height:40px"></span><span style="height:14px"></span><span style="height:50px"></span><span style="height:36px"></span><span style="height:22px"></span><span style="height:60px"></span><span style="height:30px"></span><span style="height:44px"></span><span style="height:16px"></span><span style="height:52px"></span><span style="height:26px"></span><span style="height:38px"></span><span style="height:48px"></span><span style="height:12px"></span><span style="height:56px"></span><span style="height:34px"></span><span style="height:20px"></span><span style="height:42px"></span><span style="height:18px"></span><span style="height:32px"></span><span style="height:45px"></span><span style="height:28px"></span><span style="height:55px"></span><span style="height:20px"></span><span style="height:40px"></span><span style="height:14px"></span><span style="height:50px"></span><span style="height:36px"></span><span style="height:22px"></span><span style="height:60px"></span><span style="height:30px"></span><span style="height:44px"></span><span style="height:16px"></span><span style="height:52px"></span><span style="height:26px"></span><span style="height:38px"></span><span style="height:48px"></span><span style="height:12px"></span><span style="height:56px"></span><span style="height:34px"></span><span style="height:20px"></span><span style="height:42px"></span>
+  </div>
+  <div class="header-inner">
+    <div class="header-supertop">
+      <span class="header-fecha">Lima, Perú · Periodismo musical independiente</span>
+      <span class="header-tagline-top">Est. 2025</span>
+    </div>
+    <div class="header-centro">
+      <div class="header-wave-left" aria-hidden="true">
+        <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+      </div>
+      <div class="logo-wrap">
+        <a href="index.html" class="logo">Decibeles</a>
+        <span class="logo-sub">La música peruana, en voz alta</span>
+      </div>
+      <div class="header-wave-right" aria-hidden="true">
+        <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+      </div>
+    </div>
+    <div class="header-nav-wrap">
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="entrevistas.html">Entrevistas</a>
+        <a href="analisis.html">Análisis</a>
+        <a href="resenas.html" class="activo">Reseñas</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-eyebrow">Criterio y honestidad</p>
+    <h1 class="page-hero-titulo">Re<span>señas</span></h1>
+    <p class="page-hero-desc">Discos, EPs y singles de la escena peruana evaluados con criterio. Sin adulación gratuita, sin destrucción innecesaria.</p>
+  </div>
+</div>
+
+<main>
+  <div class="contenedor">
+    <section class="seccion">
+      <span class="seccion-titulo">Reseñas</span>
+
+      <!-- Reseña 1 -->
+      <div class="resena-bloque">
+        <div class="articulo-header">
+          <p class="resena-tipo">Álbum · 2025</p>
+          <div class="rating">
+            <div class="rating-dot on"></div><div class="rating-dot on"></div><div class="rating-dot on"></div><div class="rating-dot on"></div><div class="rating-dot"></div>
+          </div>
+          <h1>Tomar Control — <em>Frente al miedo</em> (2025)</h1>
+          <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+        </div>
+        <div class="resena-meta-box">
+          <div class="resena-meta-item"><strong>Artista</strong>Tomar Control</div>
+          <div class="resena-meta-item"><strong>Álbum</strong>Frente al miedo</div>
+          <div class="resena-meta-item"><strong>Año</strong>2025</div>
+          <div class="resena-meta-item"><strong>Género</strong>Hardcore / DIY</div>
+          <div class="resena-meta-item"><strong>Sello</strong>Refuse Records</div>
+        </div>
+        <div class="articulo-cuerpo">
+          <p>Tomar Control lleva más de una década siendo probablemente uno de los mejores argumentos en contra de la idea de que el hardcore es un género exclusivamente masculino. Formada en Lima en 2014, la banda — integrada íntegramente por mujeres — ha construido su identidad sobre tres pilares que atraviesan tanto su música como su discurso: feminismo, straight edge y veganismo, enmarcado en una ética DIY que nació dentro de la propia escena hardcore limeña.</p>
+          <p><em>Frente al miedo</em> es su tercer álbum de larga duración y, sonoramente, es el más diverso de su carrera hasta la fecha, sin abandonar el mensaje que siempre las ha caracterizado. Sus diez canciones — entre ellas "Extinción", "Corazón" y "Marginal" — funcionan como un relato colectivo: tristeza, pérdida y desencanto que atraviesan a lo largo de la vida, y sobre todo, cómo se sigue adelante a pesar de eso.</p>
+          <p>Lo que hace especialmente relevante este disco es lo que vino después de su lanzamiento: Tomar Control salió por Refuse Records a presentarlo en una gira europea de casi treinta fechas repartidas en once países, incluyendo su debut en el Reino Unido. Es un recordatorio de que, aunque la escena hardcore peruana sigue siendo pequeña — la propia banda ha señalado que solo quedan unas pocas agrupaciones activas dentro de ese circuito específico — su capacidad de proyección internacional real no tiene nada de marginal.</p>
+        </div>
+      </div>
+
+      <!-- Reseña 2 -->
+      <div class="resena-bloque">
+        <div class="articulo-header">
+          <p class="resena-tipo">Álbum debut · 2025</p>
+          <div class="rating">
+            <div class="rating-dot on"></div><div class="rating-dot on"></div><div class="rating-dot on"></div><div class="rating-dot on"></div><div class="rating-dot on"></div>
+          </div>
+          <h1>Wayku — <em>Selva Selva</em> (2025)</h1>
+          <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+        </div>
+        <div class="resena-meta-box">
+          <div class="resena-meta-item"><strong>Artista</strong>Wayku</div>
+          <div class="resena-meta-item"><strong>Álbum</strong>Selva Selva</div>
+          <div class="resena-meta-item"><strong>Año</strong>2025</div>
+          <div class="resena-meta-item"><strong>Género</strong>Rock / Jazz / Amazónico</div>
+          <div class="resena-meta-item"><strong>Origen</strong>Tarapoto</div>
+        </div>
+        <div class="articulo-cuerpo">
+          <p>A veces hay discos que no se limitan a sonar bien: construyen un territorio entero solo con sonido. <em>Selva Selva</em>, el debut de Wayku, es uno de esos casos. Detrás del proyecto está Percy Flores Navarro, guitarrista y músico de Tarapoto, quien tras su paso por el conjunto Motilones de Tarapoto decidió construir un lenguaje propio a partir del diálogo entre el rock, el jazz y la música amazónica, condensando influencias de música brasileña y ritmos tropicales selváticos.</p>
+          <p>El resultado es lo que el propio proyecto describe como una revitalización de la "pandilla eléctrica": un género festivo de la Amazonía peruana que desde los años 70 viene incorporando la guitarra eléctrica a sus ritmos tradicionales, y que Wayku retoma y expande hacia lenguajes sonoros contemporáneos. Temas como "Carnaval en la Selva" o "Por la Marginal" reinterpretan esa tradición festiva sin caer en nostalgia, mientras que "Icaro" — basada en los cantos curativos que se entonan en ceremonias de ayahuasca — muestra el lugar más introspectivo del disco.</p>
+          <p>Detrás de <em>Selva Selva</em> existe además un trabajo de investigación etnográfica en comunidades nativas de San Martín y Loreto, y una producción que fue posible gracias al programa de Estímulos Económicos para la Cultura 2023 del Ministerio de Cultura del Perú. Este disco ha recibido amplia atención, incluyendo de medios internacionales como la BBC. Un debut que no suena a debut.</p>
+        </div>
+      </div>
+
+      <!-- Reseña 3 -->
+      <div class="resena-bloque">
+        <div class="articulo-header">
+          <p class="resena-tipo">Álbum · 2025</p>
+          <div class="rating">
+            <div class="rating-dot on"></div><div class="rating-dot on"></div><div class="rating-dot on"></div><div class="rating-dot on"></div><div class="rating-dot on"></div>
+          </div>
+          <h1>Lorena Blume — <em>Dinamita</em> (2025)</h1>
+          <p class="articulo-meta"><strong>Por Álvaro</strong> · Decibeles · 2026</p>
+        </div>
+        <div class="resena-meta-box">
+          <div class="resena-meta-item"><strong>Artista</strong>Lorena Blume</div>
+          <div class="resena-meta-item"><strong>Álbum</strong>Dinamita</div>
+          <div class="resena-meta-item"><strong>Año</strong>2025</div>
+          <div class="resena-meta-item"><strong>Género</strong>Rock / Cumbia / Pop / New Wave</div>
+          <div class="resena-meta-item"><strong>Canciones</strong>14</div>
+        </div>
+        <div class="articulo-cuerpo">
+          <p><em>Dinamita</em> representa un salto significativo desde el último álbum de Lorena Blume, <em>Cuchara Chueca</em> (2018). Blume pasó de una voz íntima y acústica a algo casi contrario. La cantautora peruana lo describe sin rodeos: la ruptura amorosa, el desarraigo y el silencio que siguieron fueron el detonante de un disco que ya no busca consuelo en metáforas, sino una verdad más cruda. "Creo que la emoción que dominó fue la culpa", ha dicho la propia artista sobre el proceso — y esa frase funciona casi como declaración de intenciones para las catorce canciones del álbum.</p>
+          <p>Musicalmente, <em>Dinamita</em> mezcla influencias de rock, cumbia, afrobeat, pop y new wave, y esta variedad no diluye el disco, lo sostiene. Cada canción parece elegir el sonido que mejor le sirve a la emoción específica que está narrando. El sencillo "El Juego", grabado junto a la cantante colombo-canadiense Lido Pimienta, resume bien ese espíritu: sobre una base de cumbia y pop, ambas artistas convierten el deseo en un espacio de afirmación de identidad más que en un simple tema de amor.</p>
+          <p>Más allá de lo musical, <em>Dinamita</em> también documenta el momento de una generación de artistas peruanos jóvenes que usan el rock — y prácticamente cualquier otro género — como una herramienta más dentro de una paleta amplia, sin tratarlo como una etiqueta que hay que respetar de forma purista. Un disco que explota exactamente donde dice que va a explotar.</p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <p class="newsletter-eyebrow">Mantente al día</p>
+      <h2 class="newsletter-titulo">Las mejores reseñas de la escena peruana</h2>
+      <p class="newsletter-subtitulo">Te avisamos cuando sale algo que vale la pena escuchar. Sin spam.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="tu@correo.com">
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="footer-logo">Decibeles</a>
+      <p class="footer-desc">Periodismo musical independiente sobre la escena peruana. Desde Lima hacia el mundo.</p>
+    </div>
+    <div>
+      <p class="footer-col-titulo">Secciones</p>
+      <ul class="footer-links">
+        <li><a href="entrevistas.html">Entrevistas</a></li>
+        <li><a href="analisis.html">Análisis</a></li>
+        <li><a href="resenas.html">Reseñas</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-titulo">Nosotros</p>
+      <ul class="footer-links">
+        <li><a href="nosotros.html">Misión</a></li>
+        <li><a href="nosotros.html#equipo">Equipo</a></li>
+        <li><a href="nosotros.html#colabora">Colabora</a></li>
+        <li><a href="nosotros.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-titulo">Seguir</p>
+      <ul class="footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">Spotify</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Decibeles · Lima, Perú</span>
+    <span>Todos los derechos reservados</span>
+  </div>
+</footer>
+</body>
+</html>
